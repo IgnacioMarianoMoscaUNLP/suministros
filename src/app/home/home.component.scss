@@ -1,6 +1,3 @@
-/* ==========================================
-   VARIABLES - Paleta de Colores Moderna
-   ========================================== */
 :root {
   // Colores principales - Verde natural y elegante
   --primary-green: #2D5F3F;
@@ -35,9 +32,6 @@
   --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* ==========================================
-   NAVBAR
-   ========================================== */
 .navbar {
   position: fixed;
   top: 0;
@@ -81,9 +75,6 @@
   color: var(--primary-dark);
 }
 
-/* ==========================================
-   HERO SECTION - Sección Principal
-   ========================================== */
 .hero-section {
   background-image: url('/assets/images/hero-bg.png');
   background-size: cover;
@@ -375,9 +366,6 @@
   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
 }
 
-/* ==========================================
-   CARTA SECTION
-   ========================================== */
 .carta-section {
   background: #FFFFFF;
 }
@@ -404,9 +392,6 @@
   box-shadow: var(--shadow-lg);
 }
 
-/* ==========================================
-   CONTACT SECTION
-   ========================================== */
 .contact-section {
   background: linear-gradient(135deg, #F9F9F7 0%, #FFFFFF 100%);
   text-align: center;
@@ -484,9 +469,6 @@
   font-weight: 600;
 }
 
-/* ==========================================
-   FOOTER
-   ========================================== */
 .footer {
   background: var(--primary-dark);
   color: var(--primary-green);
@@ -577,9 +559,6 @@
   }
 }
 
-/* ==========================================
-   WHATSAPP FLOAT BUTTON
-   ========================================== */
 .whatsapp-float {
   position: fixed;
   bottom: 30px;
@@ -611,9 +590,6 @@
   }
 }
 
-/* ==========================================
-   RESPONSIVE DESIGN
-   ========================================== */
 @media (max-width: 768px) {
   .hero-section {
     height: 65vh;

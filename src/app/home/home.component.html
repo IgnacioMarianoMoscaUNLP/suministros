@@ -4,35 +4,25 @@
     <div class="nav-content">
       <div class="logo">
         <img src="assets/images/logo.png" alt="Comidas Light Logo" class="logo-img">
-        <span class="logo-text">{{ businessName }}</span>
-      </div>
-      <div class="nav-actions">
-        <a [href]="whatsappLink" target="_blank" class="btn btn-primary btn-small">
-          💬 Pedí Ahora
-        </a>
+        <span class="handwritten handwritten-medium">{{ businessName }}</span>
       </div>
     </div>
   </div>
 </nav>
 
 <!-- Hero Section -->
-<section class="hero">
+<section class="hero-section">
   <div class="container">
-    <div class="hero-content">
-      <h1 class="hero-title">
-        Comé Rico, Sano y <span class="highlight">Sin Cocinar</span>
+    <div class="hero-card">
+      <h1 class="hero-title handwritten">
+        Comé Rico, <span class="hero-highlight">Sano y Sin Cocinar</span>
       </h1>
-      <p class="hero-subtitle">
-        Viandas saludables elaboradas por nutricionistas.<br>
-        Perfectas para tu dieta, diabetes o hipertensión.
-      </p>
-      <div class="hero-buttons">
-        <a [href]="whatsappLink" target="_blank" class="btn btn-primary btn-large">
-          <span class="btn-icon">📱</span>
-          <span>Consultar por WhatsApp</span>
-        </a>
+      <p class="hero-text">Viandas saludables elaboradas por nutricionistas.</p>
+      <p class="hero-text">Perfectas para tu dieta, diabetes o hipertensión.</p>
+      <div class="hero-badge">
+        <span class="badge-icon">🌿</span>
+        <span class="badge-text">Más de 10 años cuidando tu alimentación en La Plata</span>
       </div>
-      <p class="hero-note">🌿 Más de 10 años cuidando tu alimentación en La Plata</p>
     </div>
   </div>
 </section>
@@ -41,7 +31,6 @@
 <section id="beneficios" class="section benefits-section">
   <div class="container">
     <h2 class="section-title">¿Por Qué Elegirnos?</h2>
-    
     <div class="benefits-grid">
       <div class="benefit-card" *ngFor="let benefit of benefits">
         <div class="benefit-icon">{{ benefit.icon }}</div>
@@ -84,6 +73,16 @@
   </div>
 </section>
 
+<!-- Nuestra Carta -->
+<section id="carta" class="section carta-section">
+  <div class="container">
+    <h2 class="carta-title">Nuestra carta</h2>
+    <div class="carta-content">
+      <img src="assets/images/catalogo.png" alt="Catálogo Comidas Light" class="carta-image">
+    </div>
+  </div>
+</section>
+
 <!-- Contacto -->
 <section id="contacto" class="section contact-section">
   <div class="container">
@@ -94,17 +93,17 @@
       </p>
       
       <a [href]="whatsappLink" target="_blank" class="btn btn-accent btn-large cta-button">
-        <span class="btn-icon">💬</span>
+        <span class="btn-icon"><img src="assets/images/wsp.png" alt="WhatsApp" width="24" height="24"></span>
         <span>Hacer mi Pedido</span>
       </a>
 
       <div class="social-links">
         <a [href]="instagramLink" target="_blank" class="social-link" rel="noopener">
-          <span class="social-icon"><img src="assets/images/instaLogo.png" alt="Instagram" width="48" height="48"></span>
+          <span class="social-icon"><img src="assets/images/instaLogo.png" alt="Instagram" width="32" height="32"></span>
           <span>Instagram</span>
         </a>
         <a [href]="facebookLink" target="_blank" class="social-link" rel="noopener">
-          <span class="social-icon"><img src="assets/images/face.png" alt="Facebook"  width="48" height="48" ></span>
+          <span class="social-icon"><img src="assets/images/face.png" alt="Facebook" width="32" height="32"></span>
           <span>Facebook</span>
         </a>
       </div>
@@ -119,7 +118,6 @@
   <div class="container">
     <div class="footer-content">
       <div class="footer-brand">
-        <img src="assets/logo.png" alt="Comidas Light" class="footer-logo">
         <p>{{ businessName }}</p>
         <p class="footer-tagline">Nutrición y sabor en cada comida</p>
       </div>
@@ -143,7 +141,9 @@
       <p>&copy; 2024 Comidas Light. Todos los derechos reservados.</p>
       <p class="developer-credit">
         Desarrollado por 
-        <a href="https://github.com/IgnacioMarianoMoscaUNLP" target="_blank" rel="noopener">Ignacio Moscá</a>
+        <a href="https://github.com/IgnacioMarianoMoscaUNLP" target="_blank" rel="noopener">
+          Ignacio Mariano <img src="assets/images/github.png" alt="GitHub" width="20" height="20">
+        </a>
       </p>
     </div>
   </div>
@@ -151,5 +151,5 @@
 
 <!-- Botón Flotante de WhatsApp -->
 <a [href]="whatsappLink" target="_blank" class="whatsapp-float" title="Contactar por WhatsApp">
-  <span class="whatsapp-icon">💬</span>
+  <img src="assets/images/wsp.png" alt="WhatsApp" width="32" height="32">
 </a>

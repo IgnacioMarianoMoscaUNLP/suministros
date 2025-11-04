@@ -34,7 +34,7 @@ export class HomeComponent {
     },
     {
       icon: '🏠',
-      title: 'Entrega en Tolosa',
+      title: 'Entrega a Domicilio',
       description: 'Servicio de delivery en La Plata y alrededores. Tu alimentación sin complicaciones.'
     }
   ];

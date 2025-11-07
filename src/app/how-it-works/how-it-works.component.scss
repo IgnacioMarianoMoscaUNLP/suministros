@@ -1,0 +1,146 @@
+@import '../../styles/mixins';
+
+.how-works-section {
+  padding: 5rem 0;
+  background: linear-gradient(135deg, var(--bg-white) 0%, var(--bg-light) 100%);
+}
+
+.section-title {
+  font-size: 2.8rem;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 3.5rem;
+  color: var(--text-dark);
+  letter-spacing: -0.5px;
+  position: relative;
+  
+  &::after {
+    content: '';
+    display: block;
+    width: 80px;
+    height: 4px;
+    background: linear-gradient(90deg, var(--primary-light), var(--accent-green));
+    margin: 1rem auto 0;
+    border-radius: 2px;
+  }
+}
+
+.steps-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 2rem;
+  position: relative;
+  
+  @include respond-max('lg') {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2.5rem;
+  }
+  
+  @include respond-max('md') {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+  }
+  
+  @include respond-max('sm') {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+}
+
+.step-card {
+  background: white;
+  border-radius: 16px;
+  padding: 2rem 1.5rem;
+  text-align: center;
+  box-shadow: var(--shadow-md);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  border: 2px solid transparent;
+  
+  &:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-lg);
+    border-color: var(--primary-light);
+  }
+  
+  h3 {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--primary-dark);
+    margin: 1rem 0 0.75rem;
+  }
+  
+  p {
+    font-size: 0.9rem;
+    color: var(--text-medium);
+    line-height: 1.5;
+    margin: 0;
+  }
+  
+  @include respond-max('sm') {
+    padding: 1.5rem 1rem;
+    
+    h3 {
+      font-size: 1rem;
+    }
+    
+    p {
+      font-size: 0.85rem;
+    }
+  }
+}
+
+.step-number {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background: linear-gradient(135deg, var(--primary-green), var(--primary-light));
+  color: white;
+  border-radius: 50%;
+  font-weight: 700;
+  font-size: 1.2rem;
+}
+
+.step-icon {
+  font-size: 2.5rem;
+  margin: 1rem 0;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+}
+
+.connector {
+  position: absolute;
+  top: 50%;
+  right: -1rem;
+  width: 1rem;
+  height: 3px;
+  background: linear-gradient(90deg, var(--primary-light), transparent);
+  
+  @include respond-max('lg') {
+    display: none;
+  }
+}
+
+// Animación de entrada
+.step-card {
+  animation: slideInUp 0.6s ease forwards;
+  
+  @for $i from 1 through 5 {
+    &:nth-child(#{$i}) {
+      animation-delay: #{$i * 0.1}s;
+      opacity: 0;
+    }
+  }
+}
+
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

@@ -4,11 +4,17 @@ import { environment } from '../../environments/environment';
 import { ɵEmptyOutletComponent } from "@angular/router";
 import { MenusectionComponent } from '../menusection/menusection.component';
 import { NavbarComponent } from "../navbar/navbar.component";
+import { HealthyFoodIconComponent } from "../shared/icons/healthy-food.icon/healthy-food.icon.component";
+import { FrozenIconComponent } from "../shared/icons/frozen.icon/frozen.icon.component";
+import { NutritionistIconComponent } from "../shared/icons/nutritionist.icon/nutritionist.icon.component";
+import { DeliveryIconComponent } from "../shared/icons/delivery.icon/delivery.icon.component";
+import { PlateIconComponent } from '../shared/icons/plate.icon/plate.icon.component';
+import { HowItWorksComponent } from '../how-it-works/how-it-works.component';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [CommonModule, ɵEmptyOutletComponent, MenusectionComponent, NavbarComponent],
+  imports: [CommonModule, ɵEmptyOutletComponent, MenusectionComponent, NavbarComponent, HealthyFoodIconComponent, FrozenIconComponent, NutritionistIconComponent, DeliveryIconComponent,PlateIconComponent,HowItWorksComponent],
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss']
 })
@@ -22,22 +28,22 @@ export class HomeComponent {
   // Beneficios principales
   benefits = [
     {
-      icon: 'assets/images/comida-saludable.png',
+      id: 'healthy',
       title: 'Viandas Saludables',
       description: 'Hiposódicas, hipograsas e hipocalóricas. Perfectas para tu plan de alimentación.'
     },
     {
-      icon: 'assets/images/frezzer.png',
+      id: 'frozen',
       title: 'Freezadas y Frescas',
       description: 'Elaboradas con los mejores ingredientes. Listas para consumir cuando las necesites.'
     },
     {
-      icon: 'assets/images/nutricionista-icon.png',
+      id: 'nutritionist',
       title: 'Respaldo Nutricional',
       description: 'Asesoramiento personalizado con nuestra nutricionista. Más de 15 años de experiencia.'
     },
     {
-      icon: 'assets/images/home-icon.png',
+      id: 'delivery',
       title: 'Entrega a Domicilio',
       description: 'Servicio de delivery en La Plata y alrededores. Tu alimentación sin complicaciones.'
     }

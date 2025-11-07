@@ -48,22 +48,48 @@ img {
     max-width: 1140px;
   }
 }
-
 :root {
-  --primary-color: #7A9B76;
-  --primary-dark: #4A6B52;
-  --primary-light: #9CB899;
-  --accent-color: #D4936B;
-  --accent-light: #E5B896;
-  --bg-cream: #F5F1E8;
-  --bg-light: #FAFAF8;
-  --text-dark: #2C3E37;
-  --text-light: #5A6B5E;
-  --white: #ffffff;
-  --shadow: 0 2px 20px rgba(74, 107, 82, 0.1);
-  --shadow-hover: 0 5px 30px rgba(74, 107, 82, 0.15);
-  --transition: all 0.3s ease;
+  // ========== COLORES PRINCIPALES - MARCA ==========
+  --primary-green: #2D5F3F;        // Verde oscuro (identidad)
+  --primary-light: #4A9B6F;        // Verde claro (secundario)
+  --primary-dark: #1A3A28;         // Verde muy oscuro (texto)
+  
+  // ========== COLORES DE ACENTO - NUEVOS ==========
+  --accent-gold: #D4AF37;          // Dorado (premium, profesional)
+  --accent-gold-light: #E8C547;    // Dorado claro
+  --accent-green: #8BC34A;         // Verde lima (dinámico)
+  --accent-light: #C5E1A5;         // Verde muy claro
+  
+  // ========== NEUTROS MODERNOS ==========
+  --neutral-100: #FAFAF8;          // Crema (limpio, minimalista)
+  --neutral-200: #F5F5F2;          // Gris muy claro
+  --neutral-300: #E8E8E5;          // Gris claro
+  --neutral-700: #424242;          // Gris oscuro
+  --neutral-900: #212121;          // Negro suave
+  
+  // ========== COLORES DE TEXTO ==========
+  --text-dark: #2C3E50;            // Texto principal
+  --text-medium: #546E7A;          // Texto secundario
+  --text-light: #78909C;           // Texto terciario
+  
+  // ========== BACKGROUNDS ==========
+  --bg-white: #FFFFFF;             // Blanco puro
+  --bg-cream: #FAFAF8;             // Crema (reemplazar el anterior)
+  --bg-light: #F0F4F1;             // Fondo claro
+  
+  // ========== GRADIENTES ==========
+  --gradient-primary: linear-gradient(135deg, #2D5F3F 0%, #4A9B6F 100%);
+  --gradient-accent: linear-gradient(135deg, #D4AF37 0%, #8BC34A 100%);
+  --gradient-warm: linear-gradient(135deg, #4A9B6F 0%, #D4AF37 100%);
+  
+  // ========== EFECTOS Y SOMBRAS ==========
+  --shadow-sm: 0 2px 8px rgba(45, 95, 63, 0.08);
+  --shadow-md: 0 4px 16px rgba(45, 95, 63, 0.12);
+  --shadow-lg: 0 8px 32px rgba(45, 95, 63, 0.16);
+  --shadow-xl: 0 12px 48px rgba(45, 95, 63, 0.2);
+  --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
+
 
 /* Reset y Base */
 * {

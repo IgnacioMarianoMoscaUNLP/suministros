@@ -1,34 +1,32 @@
 // ========== IMPORTS ==========
-@import '../../styles/mixins'; // ← AGREGAR ESTO AL INICIO
+@import '../../styles/mixins';
 
 // ========== MENU SECTION ==========
 .menu-section {
   max-width: 1400px;
   margin: 0 auto;
   padding: 4rem 2rem;
-  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  
+  // CAMBIO: Usa la nueva paleta
+  background: linear-gradient(135deg, var(--bg-white) 0%, var(--bg-cream) 100%);
   min-height: 100vh;
   
-  // Tablet
   @include respond-max('md') {
     padding: 2rem 1rem;
   }
   
-  // Móvil pequeño
   @include respond-max('sm') {
     padding: 2rem 0.75rem;
   }
 
-  // ========== TÍTULO ==========
   h1 {
     text-align: center;
     font-size: 3rem;
     font-weight: 700;
-    color: #2d3748;
+    color: var(--text-dark);
     margin-bottom: 3rem;
     position: relative;
     
-    // Línea decorativa
     &::after {
       content: '';
       position: absolute;
@@ -37,11 +35,11 @@
       transform: translateX(-50%);
       width: 100px;
       height: 4px;
-      background: linear-gradient(90deg, #ff6b6b, #feca57);
+      // CAMBIO: Gradiente con dorado + verde
+      background: linear-gradient(90deg, var(--accent-gold) 0%, var(--accent-green) 100%);
       border-radius: 2px;
     }
     
-    // Tablet
     @include respond-max('md') {
       font-size: 2rem;
       margin-bottom: 2.5rem;
@@ -52,7 +50,6 @@
       }
     }
     
-    // Móvil pequeño
     @include respond-max('sm') {
       font-size: 1.75rem;
       margin-bottom: 2rem;
@@ -63,33 +60,28 @@
     }
   }
 
-  // ========== GRID DE MENÚ ==========
   .menu-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
     gap: 2rem;
     animation: fadeIn 0.6s ease-in;
     
-    // Tablet grande: 2 columnas max
     @include respond-max('lg') {
       grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
       gap: 1.5rem;
     }
     
-    // Tablet: 1 columna
     @include respond-max('md') {
       grid-template-columns: 1fr;
       gap: 1.5rem;
     }
     
-    // Móvil pequeño
     @include respond-max('sm') {
       gap: 1.25rem;
     }
   }
 }
 
-// ========== ANIMACIONES ==========
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -101,7 +93,6 @@
   }
 }
 
-// ========== ACCESIBILIDAD ==========
 @media (prefers-reduced-motion: reduce) {
   .menu-section {
     .menu-grid {

@@ -8,7 +8,9 @@
   --primary-light: #4A9B6F;
   --primary-dark: #1A3A28;
   
-  // Colores de acento - Verde lima fresco
+  // ← MEJORA: Dorado más sofisticado
+  --accent-gold: #C9A961;          // Dorado cálido y elegante
+  --accent-gold-light: #E8D5B7;    // Dorado muy claro
   --accent-green: #8BC34A;
   --accent-light: #C5E1A5;
   
@@ -26,7 +28,7 @@
   
   // Backgrounds
   --bg-white: #FFFFFF;
-  --bg-cream: #F9F9F7;
+  --bg-cream: #FAFAF8;
   --bg-light: #F0F4F1;
   
   // Efectos
@@ -477,14 +479,17 @@
 }
 
 // ========== ABOUT SECTION ==========
+// DESPUÉS
+// ========== ABOUT SECTION ==========
 .about-section {
-  background: linear-gradient(135deg, #3A7D5C 0%, #2D5F3F 100%);
+  // ← Gradiente mejorado con mejor contraste
+  background: linear-gradient(135deg, var(--primary-green) 0%, var(--primary-light) 100%);
   color: white;
-  
-  .section-title-left {
-    color: #FFFFFF;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
-  }
+}
+
+.about-section .section-title-left {
+  color: #FFFFFF;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
 }
 
 .about-content {
@@ -493,7 +498,6 @@
   gap: 4rem;
   align-items: center;
   
-  // Tablet
   @include respond-max('md') {
     grid-template-columns: 1fr;
     gap: 2.5rem;
@@ -508,7 +512,8 @@
   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
   
   strong {
-    color: #D4E157;
+    // ← CAMBIO: Dorado más elegante
+    color: var(--accent-gold-light);
     font-weight: 700;
     text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
   }
@@ -522,20 +527,23 @@
 }
 
 .feature-tag {
-  background: rgba(255, 255, 255, 0.25);
-  padding: 0.7rem 1.4rem;
+  // ← MEJORA: Estilo más elegante y minimalista
+  background: rgba(255, 255, 255, 0.15);
+  padding: 0.8rem 1.6rem;
   border-radius: 50px;
   font-size: 0.95rem;
   font-weight: 600;
   backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.4);
+  border: 1.5px solid rgba(255, 255, 255, 0.3);
   transition: var(--transition);
   color: #FFFFFF;
+  letter-spacing: 0.5px;
   
   &:hover {
-    background: rgba(255, 255, 255, 0.35);
-    transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    background: rgba(255, 255, 255, 0.25);
+    border-color: var(--accent-gold-light);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
   }
 }
 
@@ -549,16 +557,16 @@
   width: 100%;
   max-width: 400px;
   aspect-ratio: 1;
-  background: rgba(255, 255, 255, 0.2);
+  // ← MEJORA: Fondo más elegante
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.05) 100%);
   border-radius: 30px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  backdrop-filter: blur(10px);
-  border: 2px solid rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(15px);
+  border: 2px solid rgba(255, 255, 255, 0.2);
   
-  // Tablet
   @include respond-max('md') {
     max-width: 300px;
   }
@@ -577,6 +585,8 @@
   font-size: 6rem;
   margin-bottom: 1rem;
   filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.2));
+  // ← Si quieres reemplazar el emoji por un símbolo más minimalista, usa esto:
+  // content: '🍲';  // O un SVG más adelante
 }
 
 // ========== CARTA SECTION ==========

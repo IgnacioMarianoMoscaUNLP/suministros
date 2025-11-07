@@ -1,14 +1,13 @@
 // ========== IMPORTS ==========
 @import '../../styles/mixins';
 
-// ========== VARIABLES ==========
+// ========== VARIABLES SCSS (mantener como estaban) ==========
 $primary-green: #2d5016;
 $light-green: #7fb069;
 $medium-green: #6a994e;
 $white: #ffffff;
 $navbar-height: 80px;
 $mobile-menu-width: 280px;
-
 // ========== MIXINS LOCALES ==========
 @mixin flex-center {
   display: flex;
@@ -202,10 +201,10 @@ $mobile-menu-width: 280px;
     height: 100vh;
     width: $mobile-menu-width;
     
-    // ← CAMBIO PRINCIPAL: Fondo más claro y limpio
-    background: linear-gradient(135deg, #FFFFFF 0%, #F9F9F7 100%);
+    // CAMBIO: Usa variables CSS
+    background: linear-gradient(135deg, var(--bg-white) 0%, var(--bg-cream) 100%);
     backdrop-filter: blur(10px);
-    box-shadow: -5px 0 20px rgba(0, 0, 0, 0.08);
+    box-shadow: var(--shadow-md);
     
     flex-direction: column;
     justify-content: center;
@@ -218,7 +217,6 @@ $mobile-menu-width: 280px;
       right: 0;
     }
 
-    // Overlay oscuro (más transparente)
     &::before {
       content: '';
       position: fixed;
@@ -232,7 +230,6 @@ $mobile-menu-width: 280px;
     }
 
     &.active::before {
-      // ← Overlay más suave (0.3 en lugar de 0.5)
       background: rgba(0, 0, 0, 0.3);
       pointer-events: auto;
     }
@@ -242,6 +239,7 @@ $mobile-menu-width: 280px;
     width: 250px;
   }
 }
+
 
 // ========== BOTONES DE NAVEGACIÓN ==========
 .nav-btn {

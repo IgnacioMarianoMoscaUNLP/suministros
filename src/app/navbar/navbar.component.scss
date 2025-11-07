@@ -1,5 +1,5 @@
 // ========== IMPORTS ==========
-@import '../../styles/mixins'; // ← AGREGAR ESTO AL INICIO
+@import '../../styles/mixins';
 
 // ========== VARIABLES ==========
 $primary-green: #2d5016;
@@ -36,12 +36,10 @@ $mobile-menu-width: 280px;
     margin: 0 auto;
     padding: 0 2rem;
     
-    // Tablet
     @include respond-max('lg') {
       padding: 0 1.5rem;
     }
     
-    // Móvil pequeño
     @include respond-max('sm') {
       padding: 0 1rem;
     }
@@ -54,7 +52,6 @@ $mobile-menu-width: 280px;
   }
 }
 
-// ========== LOGO ==========
 // ========== LOGO BUTTON ==========
 .logo-btn {
   display: flex;
@@ -69,7 +66,6 @@ $mobile-menu-width: 280px;
   position: relative;
   overflow: hidden;
   
-  // Efecto de fondo al hover
   &::before {
     content: '';
     position: absolute;
@@ -109,31 +105,26 @@ $mobile-menu-width: 280px;
     outline-offset: 2px;
   }
   
-  // Contenido encima del efecto
   > * {
     position: relative;
     z-index: 1;
   }
 }
 
-// Imagen del logo
 .logo-img {
   height: 50px;
   width: auto;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   
-  // Tablet y móvil
   @include respond-max('md') {
     height: 40px;
   }
   
-  // Móvil pequeño
   @include respond-max('sm') {
     height: 35px;
   }
 }
 
-// Texto del nombre
 .handwritten {
   font-family: 'Brush Script MT', cursive;
   color: #2d5016;
@@ -141,12 +132,10 @@ $mobile-menu-width: 280px;
   font-weight: 500;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   
-  // Tablet y móvil
   @include respond-max('md') {
     font-size: 1.3rem;
   }
   
-  // Móvil pequeño
   @include respond-max('sm') {
     font-size: 1.1rem;
   }
@@ -155,7 +144,6 @@ $mobile-menu-width: 280px;
     font-weight: 500;
   }
 }
-
 
 // ========== MENÚ HAMBURGUESA ==========
 .menu-toggle {
@@ -197,7 +185,6 @@ $mobile-menu-width: 280px;
     background: $light-green;
   }
   
-  // Mostrar en móvil
   @include respond-max('md') {
     display: flex;
   }
@@ -208,16 +195,18 @@ $mobile-menu-width: 280px;
   @include flex-center;
   gap: 0.5rem;
   
-  // Móvil: menú lateral
   @include respond-max('md') {
     position: fixed;
     top: 0;
     right: -100%;
     height: 100vh;
     width: $mobile-menu-width;
-    background: rgba($white, 0.98);
-    backdrop-filter: blur(20px);
-    box-shadow: -5px 0 20px rgba(0, 0, 0, 0.1);
+    
+    // ← CAMBIO PRINCIPAL: Fondo más claro y limpio
+    background: linear-gradient(135deg, #FFFFFF 0%, #F9F9F7 100%);
+    backdrop-filter: blur(10px);
+    box-shadow: -5px 0 20px rgba(0, 0, 0, 0.08);
+    
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -229,7 +218,7 @@ $mobile-menu-width: 280px;
       right: 0;
     }
 
-    // Overlay detrás del menú
+    // Overlay oscuro (más transparente)
     &::before {
       content: '';
       position: fixed;
@@ -243,12 +232,12 @@ $mobile-menu-width: 280px;
     }
 
     &.active::before {
-      background: rgba(0, 0, 0, 0.5);
+      // ← Overlay más suave (0.3 en lugar de 0.5)
+      background: rgba(0, 0, 0, 0.3);
       pointer-events: auto;
     }
   }
   
-  // Móvil pequeño: menú más angosto
   @include respond-max('sm') {
     width: 250px;
   }
@@ -257,10 +246,10 @@ $mobile-menu-width: 280px;
 // ========== BOTONES DE NAVEGACIÓN ==========
 .nav-btn {
   background: transparent;
-  border: none;
+  border: 2px solid transparent;
   color: $primary-green;
   font-size: 1rem;
-  font-weight: 500;
+  font-weight: 600;
   padding: 0.75rem 1.5rem;
   border-radius: 25px;
   cursor: pointer;
@@ -269,7 +258,6 @@ $mobile-menu-width: 280px;
   overflow: hidden;
   white-space: nowrap;
 
-  // Efecto de onda al hover
   &::before {
     content: '';
     position: absolute;
@@ -304,20 +292,30 @@ $mobile-menu-width: 280px;
     outline-offset: 2px;
   }
   
-  // Tablet
   @include respond-max('lg') {
     font-size: 0.9rem;
     padding: 0.65rem 1.2rem;
   }
   
-  // Móvil: botones verticales
+  // Móvil: botones más visibles
   @include respond-max('md') {
     width: 100%;
     text-align: center;
     font-size: 1.1rem;
     padding: 1rem 2rem;
     
-    // Animación de entrada escalonada
+    // ← Botones con borde y fondo suave en móvil
+    background: rgba($primary-green, 0.05);
+    border: 2px solid $light-green;
+    color: $primary-green;
+    
+    &:hover {
+      background: linear-gradient(135deg, $light-green 0%, $medium-green 100%);
+      color: $white;
+      border-color: $medium-green;
+      box-shadow: 0 6px 16px rgba($light-green, 0.3);
+    }
+    
     @for $i from 1 through 5 {
       &:nth-child(#{$i}) {
         animation: slideInRight 0.3s ease forwards;
@@ -327,13 +325,11 @@ $mobile-menu-width: 280px;
     }
   }
   
-  // Móvil pequeño
   @include respond-max('sm') {
     font-size: 1rem;
     padding: 0.9rem 1.5rem;
   }
   
-  // Usuarios que prefieren movimiento reducido
   @media (prefers-reduced-motion: reduce) {
     transition: none;
     

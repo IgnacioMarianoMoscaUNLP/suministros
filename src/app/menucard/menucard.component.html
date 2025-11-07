@@ -1,6 +1,5 @@
 <article 
   class="menu-card" 
-  (click)="toggleDesplegar()" 
   [class.expanded]="desplegado"
   [class.selector-mode]="modoSelector"
   role="button"
@@ -9,50 +8,53 @@
   (keydown.enter)="toggleDesplegar()"
   (keydown.space)="toggleDesplegar(); $event.preventDefault()"
 >
-  <!-- HEADER -->
-  <div class="card-header">
+  <!-- HEADER: Se puede hacer click sin problemas -->
+  <div class="card-header" (click)="toggleDesplegar()">
     <h2>{{ nombre }}</h2>
     <span class="toggle-icon" aria-hidden="true">{{ desplegado ? '−' : '+' }}</span>
   </div>
 
-  <!-- CONTENIDO: MODO LECTURA -->
-  <ul class="platos-list platos-lectura" *ngIf="desplegado && !modoSelector">
-    <li *ngFor="let plato of platos">{{ plato.nombre }}</li>
-  </ul>
+  <!-- CONTENIDO: NO se cierra al hacer click dentro -->
+  <div class="card-content" (click)="$event.stopPropagation()">
+    <!-- MODO LECTURA -->
+    <ul class="platos-list platos-lectura" *ngIf="desplegado && !modoSelector">
+      <li *ngFor="let plato of platos">{{ plato.nombre }}</li>
+    </ul>
 
-  <!-- CONTENIDO: MODO SELECTOR -->
-  <div class="platos-selector" *ngIf="desplegado && modoSelector">
-    <div class="selector-item" *ngFor="let plato of platos">
-      <div class="item-content">
-        <input 
-          type="checkbox" 
-          [id]="'plato-' + nombre + '-' + plato.nombre"
-          [checked]="obtenerCantidad(plato.nombre) > 0"
-          (change)="agregarPlato(plato.nombre)"
-          class="plato-checkbox"
-        />
-        <label [for]="'plato-' + nombre + '-' + plato.nombre" class="plato-nombre">
-          {{ plato.nombre }}
-        </label>
-      </div>
+    <!-- MODO SELECTOR -->
+    <div class="platos-selector" *ngIf="desplegado && modoSelector">
+      <div class="selector-item" *ngFor="let plato of platos">
+        <div class="item-content">
+          <input 
+            type="checkbox" 
+            [id]="'plato-' + nombre + '-' + plato.nombre"
+            [checked]="obtenerCantidad(plato.nombre) > 0"
+            (change)="agregarPlato(plato.nombre)"
+            class="plato-checkbox"
+          />
+          <label [for]="'plato-' + nombre + '-' + plato.nombre" class="plato-nombre">
+            {{ plato.nombre }}
+          </label>
+        </div>
 
-      <!-- Controles de cantidad -->
-      <div class="cantidad-controls" *ngIf="obtenerCantidad(plato.nombre) > 0">
-        <button 
-          class="btn-control" 
-          (click)="quitarPlato(plato.nombre); $event.stopPropagation()"
-          aria-label="Disminuir cantidad"
-        >
-          −
-        </button>
-        <span class="cantidad">{{ obtenerCantidad(plato.nombre) }}</span>
-        <button 
-          class="btn-control" 
-          (click)="agregarPlato(plato.nombre); $event.stopPropagation()"
-          aria-label="Aumentar cantidad"
-        >
-          +
-        </button>
+        <!-- Controles de cantidad -->
+        <div class="cantidad-controls" *ngIf="obtenerCantidad(plato.nombre) > 0">
+          <button 
+            class="btn-control" 
+            (click)="quitarPlato(plato.nombre); $event.stopPropagation()"
+            aria-label="Disminuir cantidad"
+          >
+            −
+          </button>
+          <span class="cantidad">{{ obtenerCantidad(plato.nombre) }}</span>
+          <button 
+            class="btn-control" 
+            (click)="agregarPlato(plato.nombre); $event.stopPropagation()"
+            aria-label="Aumentar cantidad"
+          >
+            +
+          </button>
+        </div>
       </div>
     </div>
   </div>

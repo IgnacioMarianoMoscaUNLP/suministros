@@ -79,6 +79,64 @@
   transition: width 0.3s ease;
 }
 
+// ========== BOTONES DE ACCIÓN ==========
+.action-buttons {
+  display: flex;
+  gap: 0.75rem;
+  
+  @include respond-max('sm') {
+    width: 100%;
+    gap: 0.5rem;
+    order: 4;
+  }
+}
+
+// Botón Cancelar
+.btn-cancel {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.8rem 1.2rem;
+  background: var(--neutral-200);
+  color: var(--text-dark);
+  border: 2px solid var(--neutral-300);
+  border-radius: 50px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+  
+  &:hover {
+    border-color: #e74c3c;
+    background: rgba(231, 76, 60, 0.1);
+    color: #e74c3c;
+  }
+  
+  .icon {
+    font-size: 1rem;
+  }
+  
+  .text {
+    font-size: 0.9rem;
+  }
+  
+  @include respond-max('sm') {
+    flex: 1;
+    justify-content: center;
+    padding: 0.7rem 0.8rem;
+    font-size: 0.85rem;
+    
+    .text {
+      display: none;
+    }
+    
+    .icon {
+      font-size: 1.1rem;
+    }
+  }
+}
+
+// Botón WhatsApp
 .btn-whatsapp {
   display: flex;
   align-items: center;
@@ -112,17 +170,145 @@
   }
   
   @include respond-max('sm') {
-    width: 100%;
+    flex: 1;
     justify-content: center;
-    padding: 0.9rem 1.2rem;
-    font-size: 0.9rem;
+    padding: 0.7rem 0.8rem;
+    font-size: 0.85rem;
     
     .text {
       display: none;
     }
     
     .icon {
-      font-size: 1.4rem;
+      font-size: 1.3rem;
     }
+  }
+}
+
+// ========== MODAL DE CONFIRMACIÓN ==========
+.confirmation-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2000;
+  padding: 1rem;
+  animation: fadeIn 0.2s ease;
+}
+
+.modal-content {
+  background: white;
+  border-radius: 16px;
+  padding: 2rem;
+  max-width: 400px;
+  width: 100%;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+  animation: slideUp 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  text-align: center;
+}
+
+.modal-icon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.modal-content h3 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--text-dark);
+  margin: 0 0 0.75rem 0;
+}
+
+.modal-content p {
+  font-size: 1rem;
+  color: var(--text-medium);
+  margin: 0 0 2rem 0;
+  line-height: 1.5;
+}
+
+.modal-buttons {
+  display: flex;
+  gap: 1rem;
+  
+  @include respond-max('sm') {
+    flex-direction: column;
+  }
+}
+
+.btn-no {
+  flex: 1;
+  padding: 0.9rem 1.5rem;
+  background: var(--neutral-200);
+  color: var(--text-dark);
+  border: 2px solid var(--neutral-300);
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  
+  &:hover {
+    border-color: var(--primary-light);
+    background: rgba(74, 155, 111, 0.1);
+  }
+}
+
+.btn-si {
+  flex: 1;
+  padding: 0.9rem 1.5rem;
+  background: #e74c3c;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  
+  &:hover {
+    background: #c0392b;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(231, 76, 60, 0.3);
+  }
+}
+
+// ========== ANIMACIONES ==========
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .confirmation-modal {
+    animation: none;
+  }
+  
+  .modal-content {
+    animation: none;
+  }
+  
+  .btn-no,
+  .btn-si,
+  .btn-cancel,
+  .btn-whatsapp {
+    transition: none;
   }
 }

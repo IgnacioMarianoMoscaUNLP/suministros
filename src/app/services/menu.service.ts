@@ -2,6 +2,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { map, Observable } from 'rxjs';
+import { environment } from '../../environments/environment';
 
 interface Row { Categoria: string; Plato: string; }
 export interface MenuItem { nombre: string; }
@@ -9,7 +10,7 @@ export interface MenuGrupo { titulo: string; items: MenuItem[]; }
 
 @Injectable({ providedIn: 'root' })
 export class MenuService {
-  private url = 'https://opensheet.elk.sh/1rUkhhPLmKwHDyg51m7qeiqx24eJATHdJ1U17BrlkKb8/menu_data';
+  private url = environment.menuUrl;
 
   constructor(private http: HttpClient) {}
 

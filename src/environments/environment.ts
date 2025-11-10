@@ -5,5 +5,6 @@ export const environment = {
   instagramUrl: 'https://instagram.com/comidaslightviandas',
   facebookUrl: 'https://facebook.com/viandasaludableslaplata', // Ajusta la URL real
   businessName: 'Comidas Light',
-  businessLocation: 'Tolosa, La Plata'
+  businessLocation: 'Tolosa, La Plata',
+  menuUrl:'https://opensheet.elk.sh/1rUkhhPLmKwHDyg51m7qeiqx24eJATHdJ1U17BrlkKb8/menu_data'
 };

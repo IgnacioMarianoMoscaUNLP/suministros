@@ -1,14 +1,14 @@
-// ========== IMPORTS ==========
+
 @import '../../styles/mixins';
 
-// ========== VARIABLES SCSS (mantener como estaban) ==========
+
 $primary-green: #2d5016;
 $light-green: #7fb069;
 $medium-green: #6a994e;
 $white: #ffffff;
 $navbar-height: 80px;
 $mobile-menu-width: 280px;
-// ========== MIXINS LOCALES ==========
+
 @mixin flex-center {
   display: flex;
   align-items: center;
@@ -18,7 +18,7 @@ $mobile-menu-width: 280px;
   transition: $properties $duration ease;
 }
 
-// ========== NAVBAR PRINCIPAL ==========
+
 .navbar {
   position: fixed;
   top: 0;
@@ -51,7 +51,7 @@ $mobile-menu-width: 280px;
   }
 }
 
-// ========== LOGO BUTTON ==========
+
 .logo-btn {
   display: flex;
   align-items: center;
@@ -189,7 +189,7 @@ $mobile-menu-width: 280px;
   }
 }
 
-// ========== MENÚ DE NAVEGACIÓN ==========
+
 .nav-menu {
   @include flex-center;
   gap: 0.5rem;
@@ -201,7 +201,7 @@ $mobile-menu-width: 280px;
     height: 100vh;
     width: $mobile-menu-width;
     
-    // CAMBIO: Usa variables CSS
+   
     background: linear-gradient(135deg, var(--bg-white) 0%, var(--bg-cream) 100%);
     backdrop-filter: blur(10px);
     box-shadow: var(--shadow-md);

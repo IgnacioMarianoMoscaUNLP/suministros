@@ -1,44 +1,44 @@
-// ========== IMPORTS ==========
-@import '../../styles/mixins'; // ← AGREGAR ESTO AL INICIO
 
-// ========== VARIABLES CSS ==========
+@import '../../styles/mixins'; 
+
+
 :root {
-  // Colores principales - Verde natural y elegante
+ 
   --primary-green: #2D5F3F;
   --primary-light: #4A9B6F;
   --primary-dark: #1A3A28;
   
-  // ← MEJORA: Dorado más sofisticado
-  --accent-gold: #C9A961;          // Dorado cálido y elegante
-  --accent-gold-light: #E8D5B7;    // Dorado muy claro
+  
+  --accent-gold: #C9A961;          
+  --accent-gold-light: #E8D5B7;    
   --accent-green: #8BC34A;
   --accent-light: #C5E1A5;
   
-  // Neutros modernos
+  
   --neutral-100: #FAFAFA;
   --neutral-200: #F5F5F5;
   --neutral-300: #E8E8E8;
   --neutral-700: #424242;
   --neutral-900: #212121;
   
-  // Colores de texto
+  
   --text-dark: #2C3E50;
   --text-medium: #546E7A;
   --text-light: #78909C;
   
-  // Backgrounds
+  
   --bg-white: #FFFFFF;
   --bg-cream: #FAFAF8;
   --bg-light: #F0F4F1;
   
-  // Efectos
+  
   --shadow-sm: 0 2px 8px rgba(45, 95, 63, 0.08);
   --shadow-md: 0 4px 16px rgba(45, 95, 63, 0.12);
   --shadow-lg: 0 8px 32px rgba(45, 95, 63, 0.16);
   --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-// ========== NAVBAR ==========
+
 .navbar {
   position: fixed;
   top: 0;
@@ -82,7 +82,7 @@
   color: var(--primary-dark);
 }
 
-// ========== HERO SECTION ==========
+
 .hero-section {
   background-image: url('/assets/images/hero-bg.png');
   background-size: cover;
@@ -99,7 +99,7 @@
   position: relative;
   margin-top: 70px;
   
-  // Overlay oscuro
+  
   &::before {
     content: '';
     position: absolute;
@@ -115,7 +115,7 @@
     z-index: 1;
   }
   
-  // Tablet
+  
   @include respond-max('md') {
     height: 65vh;
     min-height: 500px;
@@ -478,11 +478,8 @@
   }
 }
 
-// ========== ABOUT SECTION ==========
-// DESPUÉS
-// ========== ABOUT SECTION ==========
 .about-section {
-  // ← Gradiente mejorado con mejor contraste
+
   background: linear-gradient(135deg, var(--primary-green) 0%, var(--primary-light) 100%);
   color: white;
 }
@@ -527,7 +524,7 @@
 }
 
 .feature-tag {
-  // ← MEJORA: Estilo más elegante y minimalista
+  
   background: rgba(255, 255, 255, 0.15);
   padding: 0.8rem 1.6rem;
   border-radius: 50px;

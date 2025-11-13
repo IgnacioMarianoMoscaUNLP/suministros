@@ -1,7 +1,7 @@
 <nav class="navbar">
   <div class="container">
     <div class="nav-content">
-      <!-- Logo -->
+      
       <div class="logo">
         <button class="logo-btn" (click)="navigateToSection('hero-section')">
           <img src="assets/images/logo.png" alt="Comidas Light Logo" class="logo-img">
@@ -9,7 +9,7 @@
         </button> 
       </div>
       
-      <!-- Botón hamburguesa (ESTO FALTABA) -->
+      
       <button 
         class="menu-toggle" 
         [class.active]="menuOpen"
@@ -21,7 +21,7 @@
         <span></span>
       </button>
       
-      <!-- Menú de navegación -->
+      
       <div class="nav-menu" [class.active]="menuOpen">
         <button 
           *ngFor="let item of menuItems" 

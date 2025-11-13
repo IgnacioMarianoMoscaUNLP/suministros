@@ -9,20 +9,20 @@ import { PackSelectorService } from '../services/pack-selector.service';
   template: `
     <div class="pack-selector-bar" *ngIf="packActual">
       <div class="bar-content">
-        <!-- Mostrar progreso -->
+        
         <div class="progress-info">
           <span class="label">Seleccionadas:</span>
           <span class="counter">{{ totalActual }}/{{ packActual }}</span>
         </div>
 
-        <!-- Barra visual -->
+        
         <div class="progress-bar">
           <div class="progress-fill" [style.width.%]="(totalActual / packActual) * 100"></div>
         </div>
 
-        <!-- Botones de acción -->
+        
         <div class="action-buttons">
-          <!-- Botón Cancelar -->
+        
           <button 
             class="btn-cancel"
             (click)="abrirConfirmacion()"
@@ -32,20 +32,20 @@ import { PackSelectorService } from '../services/pack-selector.service';
             <span class="text">Cancelar</span>
           </button>
 
-          <!-- Botón WhatsApp -->
+        
           <button 
             class="btn-whatsapp"
             [disabled]="totalActual !== packActual"
             (click)="abrirWhatsApp()"
             [title]="totalActual !== packActual ? 'Completa tu selección' : 'Hacer pedido'"
           >
-            <span class="icon">💬</span>
+            <span class="icon"><img src="assets/images/wsp.png" alt="WhatsApp" width="24" height="24"></span>
             <span class="text">Pedir ahora</span>
           </button>
         </div>
       </div>
 
-      <!-- Modal de confirmación -->
+      
       <div class="confirmation-modal" *ngIf="mostrarConfirmacion" (click)="cerrarConfirmacion()">
         <div class="modal-content" (click)="$event.stopPropagation()">
           <div class="modal-icon">⚠️</div>
@@ -83,23 +83,23 @@ export class PackSelectorBarComponent implements OnInit {
     });
   }
 
-  // Abrir modal de confirmación
+  
   abrirConfirmacion() {
     this.mostrarConfirmacion = true;
   }
 
-  // Cerrar modal sin hacer nada
+  
   cerrarConfirmacion() {
     this.mostrarConfirmacion = false;
   }
 
-  // Confirmar cancelación
+  
   confirmarCancelacion() {
     this.packService.limpiar();
     this.mostrarConfirmacion = false;
   }
 
-  // Abrir WhatsApp
+  
   abrirWhatsApp() {
     const mensaje = this.packService.generarMensajeWhatsApp();
     const numero = '5492215963237'; // WhatsApp de Comidas Light

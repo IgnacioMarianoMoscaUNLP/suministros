@@ -28,7 +28,7 @@ toggleMenu() {
     { label: 'Inicio', section: 'hero-section' },
     { label: 'Beneficios', section: 'beneficios' },
     { label: 'Nosotros', section: 'nosotros' },
-    { label: 'Menú', section: 'menusection' },
+    { label: 'Carta', section: 'menusection' },
     { label: 'Contacto', section: 'contacto' }
   ];
 

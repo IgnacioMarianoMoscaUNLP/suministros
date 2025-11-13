@@ -8,20 +8,15 @@
   (keydown.enter)="toggleDesplegar()"
   (keydown.space)="toggleDesplegar(); $event.preventDefault()"
 >
-  <!-- HEADER: Se puede hacer click sin problemas -->
   <div class="card-header" (click)="toggleDesplegar()">
     <h2>{{ nombre }}</h2>
     <span class="toggle-icon" aria-hidden="true">{{ desplegado ? '−' : '+' }}</span>
   </div>
-
-  <!-- CONTENIDO: NO se cierra al hacer click dentro -->
   <div class="card-content" (click)="$event.stopPropagation()">
-    <!-- MODO LECTURA -->
     <ul class="platos-list platos-lectura" *ngIf="desplegado && !modoSelector">
       <li *ngFor="let plato of platos">{{ plato.nombre }}</li>
     </ul>
 
-    <!-- MODO SELECTOR -->
     <div class="platos-selector" *ngIf="desplegado && modoSelector">
       <div class="selector-item" *ngFor="let plato of platos">
         <div class="item-content">
@@ -37,7 +32,6 @@
           </label>
         </div>
 
-        <!-- Controles de cantidad -->
         <div class="cantidad-controls" *ngIf="obtenerCantidad(plato.nombre) > 0">
           <button 
             class="btn-control" 

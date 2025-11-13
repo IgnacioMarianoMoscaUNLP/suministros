@@ -12,7 +12,7 @@
   }
 }
 
-// Permitir selección solo en inputs
+
 .plato-checkbox,
 .btn-control {
   -webkit-user-select: auto;
@@ -20,7 +20,7 @@
   -webkit-tap-highlight-color: rgba(45, 95, 63, 0.1);
 }
 
-// ========== MENU CARD BASE ==========
+
 .menu-card {
   background: white;
   border-radius: 16px;
@@ -32,17 +32,15 @@
   cursor: pointer;
   border: 2px solid transparent;
   
-  // ... resto del código
+
 }
 
-// ========== CARD HEADER ==========
-// ========== CONTENT WRAPPER ==========
+
 .card-content {
-  // Permite que los clicks dentro no cierren la tarjeta
-  // Ya tiene stopPropagation en el HTML
+
 }
 
-// ========== CARD HEADER ==========
+
 .card-header {
   display: flex;
   justify-content: space-between;
@@ -69,7 +67,7 @@
   }
 }
 
-// ... resto igual
+
 
 
 .toggle-icon {
@@ -85,7 +83,7 @@
   }
 }
 
-// ========== MODO LECTURA (Lista simple) ==========
+
 .platos-lectura {
   list-style: none;
   padding: 0;
@@ -138,7 +136,7 @@
   }
 }
 
-// ========== MODO SELECTOR ==========
+
 .platos-selector {
   display: flex;
   flex-direction: column;
@@ -193,7 +191,7 @@
   }
 }
 
-// ========== CONTROLES DE CANTIDAD ==========
+
 .cantidad-controls {
   display: flex;
   align-items: center;

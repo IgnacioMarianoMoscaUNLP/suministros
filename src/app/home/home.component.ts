@@ -26,7 +26,7 @@ export class HomeComponent {
   facebookLink: string;
   businessName: string;
   
-  // Beneficios principales
+  
   benefits = [
     {
       id: 'healthy',
